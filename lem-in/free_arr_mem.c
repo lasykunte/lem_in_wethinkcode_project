@@ -14,6 +14,6 @@ void    free_arr_mem(char **arr, f_graph_node *ptr_gr, int err)
     }
 	free(arr);
 	if (err)
-		exit(1));
+		freefunction_exit(ptr_gr, 1);
 	arr = NULL;
 }
