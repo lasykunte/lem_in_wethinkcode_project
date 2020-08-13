@@ -14,9 +14,9 @@ void	freefunction_exit(f_graph_node *ptr_gr, int err)
 		index = -1;
 		while (++index < ptr_gr->room_count)
 		{
-			free(ptr_gr->adjecency_matrix_table[index]);
+			free(ptr_gr->adjacency_matrix_table[index]);
 		}
-		free(ptr_gr->adjecency_matrix_table);
+		free(ptr_gr->adjacency_matrix_table);
 	}
 	free(ptr_gr);
 	if (err)

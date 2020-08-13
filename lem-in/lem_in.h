@@ -9,7 +9,7 @@ typedef struct		farm_graph
 	int			    ants;
     int				room_count;
     int             current_room;
-    int             **adjecency_matrix_table;
+    int             **adjacency_matrix_table;
     int             *path_find;
     int             path_find_indx;
     int             validate[2];
