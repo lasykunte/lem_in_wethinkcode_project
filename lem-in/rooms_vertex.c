@@ -1,6 +1,6 @@
 #include "lem_in.h"
 
-static void     check_int(char **vertex_room, f_graph_node *ptr_gr, char *str)
+static void     check_int(char **rooms, f_graph_node *ptr_gr, char *str)
 {
 	int index;
     int int_digit;
@@ -11,29 +11,29 @@ static void     check_int(char **vertex_room, f_graph_node *ptr_gr, char *str)
 		while (str[index])
 		{
 			int_digit = ft_isdigit(str[index])
-            if (!int_digit)
-				free_arr_mem(vertex_room, ptr_gr, 1);
+            if (!(int_digit))
+				free_arr_mem(rooms, ptr_gr, 1);
             ++index;
 		}
 	}
 	else
     {
-		free_arr_mem(vertex_room, ptr_gr, 1);
+		free_arr_mem(rooms, ptr_gr, 1);
     }
 }
 
 static void	    check_room(f_graph_node *ptr_gr, char *line)
 {
-	char **vertex_room;
+	char **rooms;
 
-	vertex_room = ft_strsplit(line, ' ');
-	if (vertex_room[3] != NULL || vertex_room[0][0] == 'L')
+	rooms = ft_strsplit(line, ' ');
+	if (rooms[3] != NULL || rooms[0][0] == 'L')
     {
-		free_arr_mem(vertex_room, ptr_gr, 1);
+		free_arr_mem(rooms, ptr_gr, 1);
     }
-	check_int(vertex_room, ptr_gr, vertex_room[1]);
-	check_int(vertex_room, ptr_gr, vertex_room[2]);
-	free_arr_mem(vertex_room, ptr_gr, 0);
+	check_int(rooms, ptr_gr, rooms[1]);
+	check_int(rooms, ptr_gr, rooms[2]);
+	free_arr_mem(rooms, ptr_gr, 0);
 }
 
 void		rooms_vertex(f_graph_node *ptr_gr, char *line)
