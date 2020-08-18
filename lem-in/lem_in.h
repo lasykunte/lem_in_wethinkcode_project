@@ -21,3 +21,7 @@ typedef struct		farm_graph
     char            *edge_links;
     char            *room_vertex_list;
 }					f_graph_node;
+
+int		room_vertex_indx(f_graph_node *ptr_gr, char *room_vertex_name, int begin)
+void    sum_room_vertex(f_graph_node *ptr_gr)
+void	ants_num_count(f_graph_node *ptr_gr, char *line)
