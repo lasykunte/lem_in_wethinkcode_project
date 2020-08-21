@@ -37,7 +37,12 @@ void		adjacency_matrix(f_graph_node *ptr_gr)
 			free_array(room_l, ptr_gr, 0);
 			free_array(room_links, ptr_gr, 1);
 		}
-		(row_order_j) ? (ptr_gr->adjacency_matrix_table[row_order_i][row_order_j] = 1) : 0;
+		if (row_order_j)
+		{
+			ptr_gr->adjacency_matrix_table[row_order_i][row_order_j] = 1;
+		}
+		else
+		 	ptr_gr->adjacency_matrix_table[row_order_i][row_order_j] = 0;
 		(row_order_i) ? (ptr_gr->adjacency_matrix_table[row_order_j][row_order_i] = 1) : 0;
 		free_array(room_l, ptr_gr, 0);
 	}
