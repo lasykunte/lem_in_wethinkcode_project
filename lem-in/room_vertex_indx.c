@@ -17,5 +17,5 @@ int		room_vertex_indx(f_graph_node *ptr_gr, char *room_vertex_name, int begin)
 			return (i);
 		}
 	}
-	return (i)
+	return (i);
 }
