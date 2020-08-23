@@ -10,8 +10,8 @@ typedef struct		farm_graph
     int				room_count;
     int             current_room;
     int             **adjacency_matrix_table;
-    int             *path_find;
-    int             path_find_indx;
+    int             *path_f;
+    int             path_fjui_indx;
     int             validate[2];
 	int				initialiaze_validate;
     int             valid_line;
