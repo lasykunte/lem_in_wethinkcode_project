@@ -15,7 +15,7 @@ static void		validate_vertex_indx(f_graph_node *ptr_gr, int index, char **rooms)
 	vertex_indx = room_vertex_indx(ptr_gr, rooms[0], 0);
 	if (index != vertex_indx && vertex_indx > 0)
 	{
-		freefuntion_exit(ptr_gr, 1);
+		freefunction_exit(ptr_gr, 1);
 	}
 	ptr_gr->room_vertex[index] = ft_strdup(rooms[0]);
 }

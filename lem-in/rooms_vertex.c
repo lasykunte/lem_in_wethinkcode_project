@@ -10,9 +10,11 @@ static void     check_int(char **rooms, f_graph_node *ptr_gr, char *str)
 	{
 		while (str[index])
 		{
-			int_digit = ft_isdigit(str[index])
+			int_digit = ft_isdigit(str[index]);
             if (!(int_digit))
+			{
 				free_arr_mem(rooms, ptr_gr, 1);
+			}
             ++index;
 		}
 	}

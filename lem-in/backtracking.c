@@ -39,7 +39,7 @@ static int	    along_path(f_graph_node *ptr_gr, int vertex_i)
 	int index;
 
 	index = -1;
-	while (ptr_gr->path[++index] != -1)
+	while (ptr_gr->path_f[++index] != -1)
 	{
 		if (ptr_gr->path_f[index] == vertex_i)
         {

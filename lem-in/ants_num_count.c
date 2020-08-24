@@ -13,7 +13,7 @@ void	ants_num_count(f_graph_node *ptr_gr, char *line)
 	ptr_gr->ants = ft_atoi(str);
 	if ((ptr_gr->ants) <= 0)
 		freefunction_exit(ptr_gr, 1);
-	while (str[index] != 0 && s[index] != '\n')
+	while (str[index] != 0 && str[index] != '\n')
 	{
 		if (!ft_isdigit(str[index++]))
 		{

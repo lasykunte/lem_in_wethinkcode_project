@@ -10,5 +10,5 @@ void	edge_links(f_graph_node *ptr_gr, char *line)
     {
 		freefunction_exit(ptr_gr, 1);
     }
-	ptr_gr->edge_link = combine_ant_stings(ptr_gr->edge_links, line, 0);
+	ptr_gr->edge_links = combine_ant_string(ptr_gr->edge_links, line, 0);
 }

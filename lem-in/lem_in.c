@@ -2,7 +2,7 @@
 
 static int		    check_empty_line(char *str)
 {
-	int index;
+	unsigned int index;
 
 	index = 0;
 	while (ft_isspace(str[index]) && str[index])
@@ -52,7 +52,7 @@ static f_graph_node	*initialize_validate_f(f_graph_node *ptr_gr)
 	{
 		ptr_gr->path_f[j] = -1;
 		ptr_gr->room_vertex[j] = NULL;
-		m->tab[j] = (int*)malloc(sizeof(int) * ptr_gr->room_count);
+		ptr_gr->adjacency_matrix_table[j] = (int*)malloc(sizeof(int) * ptr_gr->room_count);
 		k = -1;
 		while (ptr_gr->adjacency_matrix_table[j][++k])
         {

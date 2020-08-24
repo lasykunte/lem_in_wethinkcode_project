@@ -1,7 +1,7 @@
 #ifndef _LEM_IN_H_
 # define _LEM_IN_H_
 # include <unistd.h>
-# include <studio.h>
+# include <stdio.h>
 # include "libft/libft.h"
 
 typedef struct		farm_graph
@@ -11,7 +11,7 @@ typedef struct		farm_graph
     int             current_room;
     int             **adjacency_matrix_table;
     int             *path_f;
-    int             path_fjui_indx;
+    int             path_f_indx;
     int             validate[2];
 	int				initialiaze_validate;
     int             valid_line;

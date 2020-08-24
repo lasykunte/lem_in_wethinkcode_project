@@ -9,7 +9,7 @@ void	freefunction_exit(f_graph_node *ptr_gr, int err)
 	free(ptr_gr->ant_list);
 	if (ptr_gr->initialiaze_validate)
 	{
-		free(ptr_gr->path_find);
+		free(ptr_gr->path_f);
 		free_arr_mem(ptr_gr->room_vertex, ptr_gr, 0);
 		index = -1;
 		while (++index < ptr_gr->room_count)

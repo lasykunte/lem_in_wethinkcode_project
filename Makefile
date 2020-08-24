@@ -2,18 +2,18 @@ CC = gcc
 
 LIB = ./libft/libft.a
 
-NAME = lem-ins
+NAME = lem-in_
 
 FLAGS = -Wall -Wextra -Werror -I.
 
-SRCC =	./lem_in/lem_in.c ./lem_in/adjacency_matrix.c\
-		./lem_in/ants_num_count.c ./lem_in/free_arr_mem.c\
-		./lem_in/freefuntion_exit.c ./lem_in/backtracking.c\
-		./lem_in/combine_ant_string.c ./lem_in/display_matrix.c\
-		./lem_in/display_results.c ./lem_in/edge_links.c\
-		./lem_in/room_vertex_indx.c ./lem_in/rooms_vertex.c\
-		./lem_in/sum_room_vertex.c
-
+SRCC =	./lem-in/lem_in.c ./lem-in/backtracking.c\
+		./lem-in/ants_num_count.c ./lem-in/edge_links.c \
+		./lem-in/rooms_vertex.c ./lem-in/freefunction_exit.c\
+		./lem-in/sum_room_vertex.c ./lem-in/adjacency_matrix.c\
+		./lem-in/display_matrix.c ./lem-in/display_results.c\
+		./lem-in/room_vertex_indx.c ./lem-in/combine_ant_string.c\
+		./lem-in/free_arr_mem.c
+		
 all: $(NAME)
 
 $(NAME):

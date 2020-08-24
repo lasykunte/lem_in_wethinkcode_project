@@ -35,7 +35,7 @@ void		path_result(f_graph_node *ptr_gr)
 
 	index = -1;
 	ft_putendl(ptr_gr->ant_list);
-	ft_putendl(ptr_gr->rooms_list);
+	ft_putendl(ptr_gr->room_vertex_list);
 	ft_putendl(ptr_gr->edge_links);
 	ft_putchar('\n');
 	while (++index <= ptr_gr->path_f_indx)
@@ -47,5 +47,5 @@ void		path_result(f_graph_node *ptr_gr)
 			ft_putchar('-');
 	}
 	ft_putstr("\n\n");
-	print_result(ptr_gr, 2);
+	display_results(ptr_gr, 2);
 }
