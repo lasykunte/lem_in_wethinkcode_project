@@ -22,7 +22,17 @@ typedef struct		farm_graph
     char            *room_vertex_list;
 }					f_graph_node;
 
-int		room_vertex_indx(f_graph_node *ptr_gr, char *room_vertex_name, int begin);
-void    sum_room_vertex(f_graph_node *ptr_gr);
-void	ants_num_count(f_graph_node *ptr_gr, char *line);
-void	rooms_vertex(f_graph_node *ptr_gr, char *line);
+void	            ants_num_count(f_graph_node *ptr_gr, char *line);
+void	            rooms_vertex(f_graph_node *ptr_gr, char *line);
+void	            edge_links(f_graph_node *ptr_gr, char *line);
+void			    sum_room_vertex(f_graph_node *ptr_gr);
+void		        adjacency_matrix(f_graph_node *ptr_gr);
+int			        backtracking(f_graph_node *ptr_gr, int index);
+char	            *combine_ant_string(char *str, char *str1, int cln);
+void                free_arr_mem(char **arr, f_graph_node *ptr_gr, int err);
+int		            room_vertex_indx(f_graph_node *ptr_gr, char *room_vertex_name, int begin);
+void		        path_result(f_graph_node *ptr_gr);
+void		        display_matrix(f_graph_node *ptr_gr);
+void	            freefunction_exit(f_graph_node *ptr_gr, int err);
+
+#endif
