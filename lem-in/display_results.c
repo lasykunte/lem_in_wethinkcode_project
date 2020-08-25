@@ -40,9 +40,9 @@ void		path_result(f_graph_node *ptr_gr)
 	ft_putchar('\n');
 	while (++index <= ptr_gr->path_f_indx)
 	{
-		ft_putchar('[');
+		ft_putchar('(');
 		ft_putnbr(ptr_gr->path_f[index]);
-		ft_putchar(']');
+		ft_putchar(')');
 		if (index != ptr_gr->path_f_indx)
 			ft_putchar('-');
 	}

@@ -34,9 +34,9 @@ void		display_matrix(f_graph_node *ptr_gr)
 			ft_putchar(' ');
 		}
 		ft_putstr("\t\t");
-		ft_putchar('[');
+		ft_putchar('(');
 		ft_putnbr(row_i);
-		ft_putstr("] -  ");
+		ft_putstr(")I -  ");
 		ft_putendl(ptr_gr->room_vertex[row_i]);
 	}
 	ft_putstr("\n\n");

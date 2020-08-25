@@ -46,13 +46,21 @@ void			sum_room_vertex(f_graph_node *ptr_gr)
 	{
 		rooms = ft_strsplit(line[j], ' ');
 		if (!(ft_strcmp("##start", line[j])))
+		{
 			validate(ptr_gr, line, rooms, 0);
+		}
 		else if (!(ft_strcmp("##end", line[j])))
+		{
 			validate(ptr_gr, line, rooms, 1);
+		}
 		else if (line[j][0] != '#' && ptr_gr->validate[0] == 1)
+		{
 			check_vertex_start(ptr_gr, rooms, 0);
+		}
 		else if (line[j][0] != '#' && ptr_gr->validate[1] == 1)
+		{
 			check_vertex_start(ptr_gr, rooms, 1);
+		}
 		else if (line[j][0] != '#')
 			validate_vertex_indx(ptr_gr, k++, rooms);
 		free_arr_mem(rooms, ptr_gr, 0);
