@@ -12,16 +12,16 @@ void	ants_num_count(f_graph_node *ptr_gr, char *line)
 		return ;
 	}
 	str = ft_strtrim(line);
-	ptr_gr->ants = ft_atoi(str);
-	if ((ptr_gr->ants) <= 0)
+	if ((ptr_gr->ants = ft_atoi(str)) <= 0)
 	{
 		freefunction_exit(ptr_gr, 1);
 	}
 	while (str[index] != 0 && str[index] != '\n')
 	{
-		if (!(ft_isdigit(str[index++])))
+		if (!(ft_isdigit(str[index])))
 		{
 			freefunction_exit(ptr_gr, 1);
+			index++;
 		}
 	}
 }

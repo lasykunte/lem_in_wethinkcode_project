@@ -44,7 +44,9 @@ void		path_result(f_graph_node *ptr_gr)
 		ft_putnbr(ptr_gr->path_f[index]);
 		ft_putchar(')');
 		if (index != ptr_gr->path_f_indx)
+		{
 			ft_putchar('-');
+		}
 	}
 	ft_putstr("\n\n");
 	display_results(ptr_gr, 2);
