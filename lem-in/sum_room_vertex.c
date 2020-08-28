@@ -8,6 +8,7 @@ static void	    validate(f_graph_node *ptr_gr, char **line, char **rooms, int en
 		free_arr_mem(line, ptr_gr, 1);
 	}
 }
+
 static void		validate_vertex_indx(f_graph_node *ptr_gr, int index, char **rooms)
 {
 	int vertex_indx;
@@ -36,33 +37,33 @@ void			sum_room_vertex(f_graph_node *ptr_gr)
 {
 	char	**line;
 	char	**rooms;
+	int		i;
 	int		j;
-	int		k;
 
-	j = -1;
-	k = 1;
+	i = -1;
+	j = 1;
 	line = ft_strsplit(ptr_gr->room_vertex_list, '\n');
-	while (line[++j] && k < (ptr_gr->room_count))
+	while (line[++i] && j < (ptr_gr->room_count))
 	{
-		rooms = ft_strsplit(line[j], ' ');
-		if (!(ft_strcmp("##start", line[j])))
+		rooms = ft_strsplit(line[i], ' ');
+		if (!(ft_strcmp("##start", line[i])))
 		{
 			validate(ptr_gr, line, rooms, 0);
 		}
-		else if (!(ft_strcmp("##end", line[j])))
+		else if (!(ft_strcmp("##end", line[i])))
 		{
 			validate(ptr_gr, line, rooms, 1);
 		}
-		else if (line[j][0] != '#' && ptr_gr->validate[0] == 1)
+		else if (line[i][0] != '#' && ptr_gr->validate[0] == 1)
 		{
 			check_vertex_start(ptr_gr, rooms, 0);
 		}
-		else if (line[j][0] != '#' && ptr_gr->validate[1] == 1)
+		else if (line[i][0] != '#' && ptr_gr->validate[1] == 1)
 		{
 			check_vertex_start(ptr_gr, rooms, 1);
 		}
-		else if (line[j][0] != '#')
-			validate_vertex_indx(ptr_gr, k++, rooms);
+		else if (line[i][0] != '#')
+			validate_vertex_indx(ptr_gr, j++, rooms);
 		free_arr_mem(rooms, ptr_gr, 0);
 	}
 	free_arr_mem(line, ptr_gr, 0);

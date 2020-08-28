@@ -83,9 +83,13 @@ static void		    read_file_line(f_graph_node *ptr_gr)
 			rooms_vertex(ptr_gr, line);
         }
 		else
+		{
 			freefunction_exit(ptr_gr, 1);
+		}
+		ft_putendl(ptr_gr->ant_list); //debug
+		ft_putendl(ptr_gr->room_vertex_list); //debug
 	}
-	if (!(ptr_gr->ants) || !(ptr_gr->edge_links[0]))
+	if (!ptr_gr->ants || !ptr_gr->edge_links[0])
     {
 		freefunction_exit(ptr_gr, 1);
     }

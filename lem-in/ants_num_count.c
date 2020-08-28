@@ -18,10 +18,9 @@ void	ants_num_count(f_graph_node *ptr_gr, char *line)
 	}
 	while (str[index] != 0 && str[index] != '\n')
 	{
-		if (!(ft_isdigit(str[index])))
+		if (!(ft_isdigit(str[index++])))
 		{
 			freefunction_exit(ptr_gr, 1);
-			index++;
 		}
 	}
 }

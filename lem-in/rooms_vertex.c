@@ -42,7 +42,9 @@ void		rooms_vertex(f_graph_node *ptr_gr, char *line)
 	ptr_gr->start = 2;
 	ptr_gr->room_vertex_list = combine_ant_string(ptr_gr->room_vertex_list, line, 0);
 	if (line[0] == '#')
+	{
 		return ;
+	}
 	check_room(ptr_gr, line);
 	ptr_gr->room_count++;
 }
