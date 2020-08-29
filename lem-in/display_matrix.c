@@ -33,10 +33,10 @@ void		display_matrix(f_graph_node *ptr_gr)
 			ft_putnbr(ptr_gr->adjacency_matrix_table[row_i][col_j]);
 			ft_putchar(' ');
 		}
-		ft_putstr("\t\t");
-		ft_putchar('(');
+		ft_putstr("\t");
+		ft_putchar('[');
 		ft_putnbr(row_i);
-		ft_putstr(")I -  ");
+		ft_putstr("]indx -  ");
 		ft_putendl(ptr_gr->room_vertex[row_i]);
 	}
 	ft_putstr("\n\n");

@@ -3,15 +3,13 @@
 static void     check_int(char **rooms, f_graph_node *ptr_gr, char *str)
 {
 	int index;
-    int int_digit;
 
 	index = 0;
-	if (ft_isdigit(str[0] || str[0] == '-'))
+	if (ft_isdigit(str[0]) || str[0] == '-')
 	{
 		while (str[++index])
 		{
-			int_digit = ft_isdigit(str[index]);
-            if (!(int_digit))
+            if (!(ft_isdigit(str[index])))
 			{
 				free_arr_mem(rooms, ptr_gr, 1);
 			}

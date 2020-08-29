@@ -14,7 +14,7 @@ static void		validate_vertex_indx(f_graph_node *ptr_gr, int index, char **rooms)
 	int vertex_indx;
 
 	vertex_indx = room_vertex_indx(ptr_gr, rooms[0], 0);
-	if (index != vertex_indx && vertex_indx > 0)
+	if (vertex_indx > 0 && index != vertex_indx)
 	{
 		freefunction_exit(ptr_gr, 1);
 	}
@@ -46,11 +46,11 @@ void			sum_room_vertex(f_graph_node *ptr_gr)
 	while (line[++i] && j < (ptr_gr->room_count))
 	{
 		rooms = ft_strsplit(line[i], ' ');
-		if (!(ft_strcmp("##start", line[i])))
+		if (!ft_strcmp("##start", line[i]))
 		{
 			validate(ptr_gr, line, rooms, 0);
 		}
-		else if (!(ft_strcmp("##end", line[i])))
+		else if (!ft_strcmp("##end", line[i]))
 		{
 			validate(ptr_gr, line, rooms, 1);
 		}
@@ -63,7 +63,9 @@ void			sum_room_vertex(f_graph_node *ptr_gr)
 			check_vertex_start(ptr_gr, rooms, 1);
 		}
 		else if (line[i][0] != '#')
+		{
 			validate_vertex_indx(ptr_gr, j++, rooms);
+		}
 		free_arr_mem(rooms, ptr_gr, 0);
 	}
 	free_arr_mem(line, ptr_gr, 0);

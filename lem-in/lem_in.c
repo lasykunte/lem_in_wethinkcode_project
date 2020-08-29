@@ -78,7 +78,7 @@ static void		    read_file_line(f_graph_node *ptr_gr)
         {
 			edge_links(ptr_gr, line);
         }
-		else if ((ptr_gr->start == 1 || ptr_gr->start == 2) && !(check_empty_line(line)))
+		else if ((ptr_gr->start == 1 || ptr_gr->start == 2) && !check_empty_line(line))
         {
 			rooms_vertex(ptr_gr, line);
         }
@@ -86,8 +86,6 @@ static void		    read_file_line(f_graph_node *ptr_gr)
 		{
 			freefunction_exit(ptr_gr, 1);
 		}
-		ft_putendl(ptr_gr->ant_list); //debug
-		ft_putendl(ptr_gr->room_vertex_list); //debug
 	}
 	if (!ptr_gr->ants || !ptr_gr->edge_links[0])
     {
