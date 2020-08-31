@@ -106,7 +106,7 @@ int				    main(void)
 		freefunction_exit(ptr_gr, 1);
     }
 	adjacency_matrix(ptr_gr);
-	display_matrix(ptr_gr);
+	//display_matrix(ptr_gr);
 	if (backtracking(ptr_gr, 0))
     {
 		path_result(ptr_gr);

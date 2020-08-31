@@ -32,11 +32,14 @@ static void	        display_results(f_graph_node *ptr_gr, int num)
 void		path_result(f_graph_node *ptr_gr)
 {
 	int index;
+	int i = -1;
 
 	index = -1;
 	ft_putendl(ptr_gr->ant_list);
 	ft_putendl(ptr_gr->room_vertex_list);
 	ft_putendl(ptr_gr->edge_links);
+	ft_putchar('\n');
+	display_results(ptr_gr, 2);
 	ft_putchar('\n');
 	while (++index <= ptr_gr->path_f_indx)
 	{
@@ -49,5 +52,11 @@ void		path_result(f_graph_node *ptr_gr)
 		}
 	}
 	ft_putstr("\n\n");
-	display_results(ptr_gr, 2);
+	while (++i < ptr_gr->room_count)
+	{
+		ft_putchar('(');
+		ft_putnbr(i);
+		ft_putstr(")indx -  ");
+		ft_putendl(ptr_gr->room_vertex[i]);
+	}
 }
