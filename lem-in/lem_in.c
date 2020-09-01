@@ -46,13 +46,13 @@ static f_graph_node	*initialize_validate_f(f_graph_node *ptr_gr)
 	j = -1;
 	ptr_gr->initialiaze_validate = 1;
 	ptr_gr->path_f = (int*)malloc(sizeof(int) * 1000);
-	ptr_gr->adjacency_matrix_table = (int**)malloc(sizeof(int*) * ptr_gr->room_count);
+	ptr_gr->adjacency_matrix_table = (int**)malloc(sizeof(int*) * (ptr_gr->room_count));
 	ptr_gr->room_vertex = (char**)malloc(sizeof(char*) * (ptr_gr->room_count + 1));
 	while (++j < ptr_gr->room_count)
 	{
 		ptr_gr->path_f[j] = -1;
 		ptr_gr->room_vertex[j] = NULL;
-		ptr_gr->adjacency_matrix_table[j] = (int*)malloc(sizeof(int) * ptr_gr->room_count);
+		ptr_gr->adjacency_matrix_table[j] = (int*)ft_memalloc(sizeof(int) * (ptr_gr->room_count));
 		k = -1;
 		while (ptr_gr->adjacency_matrix_table[j][++k])
         {
@@ -87,7 +87,7 @@ static void		    read_file_line(f_graph_node *ptr_gr)
 			freefunction_exit(ptr_gr, 1);
 		}
 	}
-	if (!ptr_gr->ants || !ptr_gr->edge_links[0])
+	if (!(ptr_gr->ants) || !(ptr_gr->edge_links[0]))
     {
 		freefunction_exit(ptr_gr, 1);
     }
@@ -96,6 +96,7 @@ static void		    read_file_line(f_graph_node *ptr_gr)
 
 int				    main(void)
 {
+	int index;
 	f_graph_node *ptr_gr;
 
 	ptr_gr = initialize_farm_graph();
@@ -112,6 +113,18 @@ int				    main(void)
 		path_result(ptr_gr);
     }
 	else
+	{
 		freefunction_exit(ptr_gr, 1);
+	}
+	if (ptr_gr->initialiaze_validate)
+	{
+		index = -1;
+		while (++index < ptr_gr->room_count)
+		{
+			free(ptr_gr->adjacency_matrix_table[index]);
+		}
+		// (ptr_gr->adjacency_matrix_table);
+	}
+	free(ptr_gr->adjacency_matrix_table);
 	freefunction_exit(ptr_gr, 0);
 }

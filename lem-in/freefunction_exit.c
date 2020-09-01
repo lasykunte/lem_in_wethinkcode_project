@@ -2,7 +2,7 @@
 
 void	freefunction_exit(f_graph_node *ptr_gr, int err)
 {
-	int index;
+	// int index;
 
 	free(ptr_gr->room_vertex_list);
 	free(ptr_gr->edge_links);
@@ -11,12 +11,12 @@ void	freefunction_exit(f_graph_node *ptr_gr, int err)
 	{
 		free(ptr_gr->path_f);
 		free_arr_mem(ptr_gr->room_vertex, ptr_gr, 0);
-		index = -1;
-		while (++index < ptr_gr->room_count)
-		{
-			free(ptr_gr->adjacency_matrix_table[index]);
-		}
-		free(ptr_gr->adjacency_matrix_table);
+		// index = -1;
+		// while (++index < ptr_gr->room_count)
+		// {
+		// 	free(ptr_gr->adjacency_matrix_table[index]);
+		// }
+		// (ptr_gr->adjacency_matrix_table);
 	}
 	free(ptr_gr);
 	if (err)
